@@ -29,19 +29,21 @@ func (stack *Stack) removeTop() rune {
 }
 //**************************************************//
 
-func reverseString(str string) []rune {
+func reverseString(str string) string {
 	var stack Stack
-	var reverseStr []rune
+	var reverseStr string
 
 	// Loop through the string and add each character to the stack
 	for _, char := range str {
 		stack.add(char)
 	}
-	fmt.Println(stack)
 
 	// Iterate through all characters in the stack
 	// Remove each from the top and place into the reverse string
-	// for len(stack.data) != 0 {}
+	for len(stack.data) != 0 {
+		removedChar := stack.removeTop()
+		reverseStr += string(removedChar)
+	}
 	
 	return reverseStr
 }
@@ -50,5 +52,5 @@ func main() {
 	// Define string
 	str := "hello"
 	// Call reverString
-	reverseString(str)
+	fmt.Println(reverseString(str))
 }

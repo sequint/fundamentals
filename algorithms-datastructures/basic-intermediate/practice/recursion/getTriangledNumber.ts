@@ -3,7 +3,7 @@
 // The result should be the position + the previous value in the array
 // Time Complexity: O(N)
 
-const getTriangledNumber = (position: number, numbers: number[] = []): number => {
+const getTriangledNumber = (position: number, numbers: number[] = [0]): number => {
   console.log(position)
   console.log(numbers)
   // Base case: if the length of the array is equal to the position, this is the target value
